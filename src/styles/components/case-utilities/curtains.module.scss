@@ -1,0 +1,82 @@
+%guide-link {
+    font-size: .875rem;
+    transform: translate3d(0, 75%, 0);
+
+    @include lg-desktop {
+        font-size: .95rem;
+    }
+
+    .icon {
+        display: inline-block;
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-right: .25rem;
+        fill: $bright;
+
+    }
+
+    .guide {
+        display: inline-block;
+        width: fit-content;
+        padding: 0 .25rem;
+        margin: 0 .1rem;
+        background-color: $bright;
+        border-radius: .2rem;
+        color: $sub-color;
+        font-weight: 600;
+
+    }
+}
+
+%laptop-curtain {
+    display: block;
+    width: 280px;
+    height: 100%;
+    max-height: 223px;
+    cursor: default;
+
+    @include lg-desktop {
+        max-height: 256px;
+        width: 292px;
+    }
+
+    @include tablet {
+        display: none;
+    }
+
+    .laptop-curtain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        background-color: $sub-color;
+
+        .guide-link {
+            @extend %guide-link;
+        }
+    }
+}
+
+%small-curtain {
+    display: none;
+
+    @include tablet {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $sub-color;
+        height: 7rem;
+        width: 285.75px;
+    }
+
+    @include phone {
+        margin-top: .8rem;
+    }
+
+    .guide-link {
+        @extend %guide-link;
+    }
+}
+

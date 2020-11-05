@@ -1,0 +1,231 @@
+@import "../config.scss";
+@import "../media-queries.module.scss";
+@import "./case-utilities/inner-container.module.scss";
+@import "./case-utilities/curtains.module.scss";
+@import "./case-utilities/country-label.module.scss";
+@import "./case-utilities/gallery.module.scss";
+
+.container {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  width: 100%;
+
+  .case {
+    position: relative;
+    display: flex;
+    height: 33.333vh;
+    // min-height: 241.983px;
+    min-height: 232.65px;
+    background-color: $bright;
+
+    @include lg-desktop {
+      min-height: 280px;
+    }
+
+    @include tablet {
+      height: fit-content;
+    }
+
+    &:nth-of-type(1) {
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      @include lg-desktop {
+        justify-content: center;
+      }
+
+      @include tablet {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &:nth-of-type(2) {
+      align-items: center;
+      justify-content: flex-start;
+
+      @include lg-desktop {
+        justify-content: center;
+      }
+
+      @include tablet {
+        justify-content: center;
+      }
+    }
+
+    &:nth-of-type(3) {
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      @include lg-desktop {
+        justify-content: center;
+      }
+
+      @include tablet {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .case-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $dark;
+    }
+
+    .inner-container.case-one,
+    .inner-container.case-three {
+      @extend %inner-container;
+      margin-right: 1.4rem;
+
+      @include lg-desktop {
+        margin-right: 0;
+      }
+
+      @include tablet {
+        flex-direction: column-reverse;
+        margin-right: 0;
+      }
+
+      .laptop-label {
+        @extend %country-label;
+        left: 0;
+
+        @include tablet {
+          display: none;
+        }
+
+        .line {
+          @extend %line;
+          justify-content: left;
+        }
+      }
+
+      .gallery {
+        @extend %gallery;
+        left: 178px;
+
+        @include lg-desktop {
+          left: 200px;
+        }
+
+        @include tablet {
+          left: 58.75px;
+        }
+
+        @include phone {
+          left: 0;
+        }
+      }
+
+      .small-curtain {
+        @extend %small-curtain;
+        left: -84.125px;
+
+        @include phone {
+          left: 0;
+        }
+
+        .small-label {
+          @extend %country-label;
+          left: 0;
+
+          .line {
+            @extend %line;
+            justify-content: left;
+          }
+        }
+      }
+    }
+
+    .inner-container.case-one {
+      @include tablet {
+        margin-top: 0.3rem;
+      }
+
+      @include phone {
+        margin-top: 0;
+      }
+    }
+
+    .inner-container.case-three {
+      @include tablet {
+        margin-bottom: 2.2rem;
+      }
+    }
+
+    .inner-container.case-two {
+      @extend %inner-container;
+      flex-direction: row-reverse;
+      margin-left: 1.4rem;
+
+      @include lg-desktop {
+        margin-left: 0;
+      }
+
+      @include tablet {
+        flex-direction: column-reverse;
+        transform: translateX(0);
+        margin: 0.3rem 0;
+      }
+
+      @include phone {
+        margin: 0;
+      }
+
+      .laptop-label {
+        @extend %country-label;
+        right: 0;
+
+        @include tablet {
+          display: none;
+        }
+
+        .line {
+          @extend %line;
+          justify-content: right;
+        }
+      }
+
+      .gallery {
+        @extend %gallery;
+        right: 178px;
+
+        @include lg-desktop {
+          right: 200px;
+        }
+
+        @include tablet {
+          right: 58.75px;
+        }
+
+        @include phone {
+          right: 0;
+        }
+      }
+
+      .small-curtain {
+        @extend %small-curtain;
+        left: 84.125px;
+
+        @include phone {
+          left: 0;
+        }
+
+        .small-label {
+          @extend %country-label;
+          right: 0;
+
+          .line {
+            @extend %line;
+            justify-content: right;
+          }
+        }
+      }
+    }
+  }
+}

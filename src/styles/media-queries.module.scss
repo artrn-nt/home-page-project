@@ -1,0 +1,21 @@
+$lg-desktop: 1600px;
+$tablet: 834px;
+$phone: 464px;
+
+@mixin lg-desktop {
+    @media only screen and (min-width: #{$lg-desktop})  {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: #{$tablet}){
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and (max-width: #{$phone}) {
+        @content;
+    }
+}

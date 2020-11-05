@@ -1,0 +1,49 @@
+@import './arrow-btn.module.scss';
+
+%gallery {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 384px;
+    height: 100%;
+    pointer-events: none;
+
+    @include tablet {
+        height: auto;
+        position: relative;
+        min-height: 300px;
+    }
+
+    .img-list {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        height: 100%;
+        background-color: $sub-bright;
+
+        @include lg-desktop {
+            min-height: 256px;
+        }
+
+        .img-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            min-width: 384px;
+
+            &.active {
+                content: initial;
+            }
+        }
+
+    }
+
+    .arrow {
+        @extend %arrow;
+    }
+}

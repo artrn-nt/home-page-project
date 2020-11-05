@@ -1,0 +1,263 @@
+@import '../media-queries.module.scss';
+
+%nav-title {
+    width: fit-content;
+    margin-bottom: .9rem;
+    font-size: .9rem;
+    color: $bright;
+}
+
+%nav-item {
+    position: relative;
+    width: fit-content;
+    font-weight: 500;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        display: block;
+        width: 0;
+        height: 1.5px;
+        margin-top: 2.5px;
+        background-color: $bright;
+        transition: .4s ease;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+            left: 0;
+            background-color: $bright;
+        }
+    }
+
+}
+
+%navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    background-color: $sub-color;
+    font-weight: 500;
+    z-index: 11;
+    cursor: default;
+
+    @include tablet {
+        width: 100%;
+        height: 0%;
+    }
+    
+    .inner-navigation {
+        position: absolute;
+        top:0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        height: 100%;
+        min-width: 352px;
+        padding: 0 1.4rem;
+
+        @include tablet {
+            flex-flow: row;
+            justify-content: space-around;
+            width: 100%;
+            min-width: 0;
+            height: 100%;
+            padding-top: 5.25rem;
+        }
+
+        @include phone {
+            padding-top: 4.35rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            margin-top: 2.625rem;
+
+            @include tablet {
+                width: fit-content;
+                margin-top: 0;
+            }
+
+            @include phone {
+                margin-bottom: 1rem;
+            }
+    
+            .nav-title {
+                @extend %nav-title;
+            }
+    
+            ul {
+                display: flex;
+                flex-flow: column;
+                align-items: flex-start;
+                width: fit-content;
+                padding-left: 1.4rem;
+
+                @include tablet {
+                    width: 100%;
+                }
+
+                @include phone {
+                    padding-left: 0;
+                }
+    
+                .nav-item {
+                    @extend %nav-item;
+                    font-size: 1.025rem;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: .9rem;
+                    }
+
+                    @include tablet {
+                        font-size: .95rem;
+                    }
+
+                    @include phone {
+                        &:last-of-type {
+                            margin-bottom: .9rem;
+                        }
+                    }
+    
+                }
+            }
+        }
+    
+        .nav-contact {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            color: $bright;
+
+            @include tablet {
+                width: 108px;
+            }
+    
+            .nav-title {
+                @extend %nav-title;
+            }
+
+            .contact-row {
+                display: flex;
+                flex-flow: column;
+                width: fit-content;
+                padding-left: 1.4rem;
+
+                @include tablet {
+                    width: 100%;
+                }
+
+                @include phone {
+                    padding-left: 0;
+                }
+    
+                .contact-title {
+                    font-size: .925rem;
+                    margin: .65rem 0;
+                }
+    
+                p {
+                    display: flex;
+                    flex-flow: column;
+                    font-size: .775rem;
+                    line-height: 1.3rem;
+                    font-weight: 400;
+
+                }
+                
+                &:first-of-type {
+                    .contact-title {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    
+        .nav-legal {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            margin-bottom: 3rem;
+
+            @include tablet {
+                width: fit-content;
+                margin-bottom: 0;
+            }
+    
+            .nav-title {
+                @extend %nav-title;
+            }
+    
+            ul {
+                width: fit-content;
+                padding-left: 1.4rem;
+
+                @include tablet {
+                    width: 100%;
+                }
+
+                @include phone {
+                    padding-left: 0;
+                }
+    
+                .nav-item {
+                    @extend %nav-item;
+                    font-size: .95rem;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: .75rem;
+                    }
+                }
+            }
+        }
+    
+        .nav-social {
+            position: absolute;
+            bottom: .1125rem;
+            left: 0;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 3.5rem;
+
+            @include tablet {
+                bottom: .25rem;
+            }
+    
+            .social-link {
+                display: block;
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: 50%;
+    
+                &:first-of-type {
+                    margin-left: auto;
+                    margin-right: 1rem;
+                }
+    
+                &:last-of-type {
+                    margin-right: auto;
+                    margin-left: 1rem;
+                }
+    
+                .social-wrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    transition: background-color .4s ease-out;
+                }
+            }
+        }
+    }
+}

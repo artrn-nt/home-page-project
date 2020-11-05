@@ -1,0 +1,72 @@
+%arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.2px solid $dark;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: background-color 500ms ease-in-out, height 75ms ease-out, width 75ms ease-out;
+    cursor: pointer;
+    pointer-events: initial;
+
+    &:active {
+        width: 1.65rem;
+        height: 1.65rem;
+    }
+
+    @include lg-desktop {
+        width: 1.8rem;
+        height: 1.8rem;
+
+        &:active {
+            width: 1.95rem;
+            height: 1.95rem;
+        }
+    }
+    
+    @include tablet {
+        width: 1.725rem;
+        height: 1.725rem;
+
+        &:active {
+            width: 1.875rem;
+            height: 1.875rem;
+        }
+    }
+
+    &.left {
+        left: 2.75rem;
+
+        @include lg-desktop {
+            left: 1rem;
+        }
+
+        @include tablet {
+            left: 1.5rem;
+        }
+
+        @include phone {
+            left: 2.4rem;
+        }
+    }
+
+    &.right {
+        right: 2.75rem;
+
+        @include lg-desktop {
+            right: 1rem;
+        }
+
+        @include tablet {
+            right: 1.5rem;
+        }
+
+        @include phone {
+            right: 2.4rem;
+        }
+    }
+}

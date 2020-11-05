@@ -1,0 +1,23 @@
+@import "../media-queries.module.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
+
+  @include tablet {
+    flex-flow: column;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+  }
+}

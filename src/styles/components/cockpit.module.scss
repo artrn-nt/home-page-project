@@ -1,0 +1,171 @@
+@import "../config.scss";
+@import "../media-queries.module.scss";
+@import "./navigation.module.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  height: 100vh;
+  //   min-height: 726px;
+  min-height: 698px;
+  min-width: 344px;
+  z-index: 4;
+  background-color: $bright;
+
+  @include lg-desktop {
+    min-height: 840px;
+  }
+
+  @include tablet {
+    width: 100%;
+    height: 45vh;
+    min-height: 540px;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+    z-index: 9;
+  }
+
+  .navigation {
+    @extend %navigation;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+    width: 100%;
+    padding: 0 0.7rem 0 1.4rem;
+
+    @include tablet {
+      height: 3.2rem;
+      padding: 0 0.85rem 0 1.7rem;
+    }
+
+    .logo {
+      font-size: 0.625rem;
+      letter-spacing: 0.3rem;
+      font-weight: 600;
+      cursor: default;
+
+      @include phone {
+        font-size: 0.55rem;
+        letter-spacing: 0.225rem;
+      }
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    flex-grow: 1;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+
+    .row {
+      display: block;
+      padding-left: 1.4rem;
+
+      @include tablet {
+        padding-left: 1.7rem;
+      }
+
+      h2 {
+        position: relative;
+        margin-bottom: 1.2rem;
+        font-size: 1.9rem;
+        font-weight: 600;
+        color: $bright;
+        mix-blend-mode: difference;
+        z-index: 10;
+        cursor: default;
+
+        @include phone {
+          font-size: 1.7rem;
+        }
+
+        .title-line {
+          display: flex;
+          align-items: center;
+          width: fit-content;
+          overflow: hidden;
+
+          &:first-of-type {
+            margin-bottom: 6px;
+
+            @include phone {
+              margin-bottom: 4px;
+            }
+          }
+
+          span {
+            display: inline;
+          }
+        }
+      }
+
+      .info-row {
+        display: block;
+        font-size: 1.1rem;
+        color: $dark;
+        cursor: default;
+
+        @include phone {
+          font-size: 1.05rem;
+        }
+
+        .line {
+          display: flex;
+          align-items: center;
+          width: fit-content;
+          color: $dark;
+          line-height: 2rem;
+          cursor: pointer;
+
+          @include phone {
+            line-height: 1.9rem;
+          }
+
+          .btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.6rem;
+            width: 1.6rem;
+            margin-left: 0.5rem;
+            border: 1px solid $dark;
+            border-radius: 50%;
+            transition: background-color 500ms ease-in-out;
+            cursor: pointer;
+
+            @include phone {
+              height: 1.475rem;
+              width: 1.475rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
